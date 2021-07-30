@@ -1,0 +1,120 @@
+// ----------
+// Typography
+// ----------
+
+html {
+  font-family: 'Titillium Web', sans-serif;
+  // base font-size in _reset.scss
+}
+
+// body font-size in _reset.scss
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+h1, .h1 {
+  font-size: sizes(h1);
+}
+
+h2, .h2 {
+  font-size: sizes(h2);
+}
+
+h3, .h3 {
+  font-size: sizes(h3);
+}
+
+h4, .h4 {
+  font-size: sizes(h4);
+}
+
+h5, .h5 {
+  font-size: sizes(h5);
+}
+
+h6, .h6 {
+  font-size: sizes(h6);
+}
+
+p {
+  font-size:  sizes(p);
+  word-wrap: break-word;
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0;
+  overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  
+  p {
+    display: inline;
+    
+    span {
+      font-size: 80%;
+      display: block;
+      
+      &:before {
+        content: '\003e';
+        padding-right: 0.5rem;
+      }
+      
+    }
+    
+  }
+  
+}
+
+button, .button {
+	@include button;
+}
+
+// ----------
+// Code
+// ----------
+
+pre {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  white-space: break-spaces;
+
+  code {
+    display: block;
+    padding: 0.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+code {
+  padding: 2px;
+  white-space: nowrap;
+  background: #E7E7E7;
+  font-family: "Consolas", "Monaco", "Menlo", monospace;
+  word-wrap: break-word;
+  white-space: break-spaces;
+}

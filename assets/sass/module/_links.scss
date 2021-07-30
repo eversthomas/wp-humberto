@@ -1,0 +1,32 @@
+// ----------
+// Links
+// ----------
+
+a {
+  word-wrap: break-word;
+  background-color: transparent;
+  color: color(link-color);
+  transition: 1s;
+
+  &:hover {
+    cursor: pointer;
+    color: color(link-hover);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+        text-decoration: none;
+    }
+}
+
+.readmore {
+    display: table;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #eeeeee;
+}
+
+.nav-links {
+    border-top: 1px solid #444444;
+}

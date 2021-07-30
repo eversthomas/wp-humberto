@@ -1,0 +1,44 @@
+/*
+Theme Name: Humberto
+Theme URI: 
+Author: TomEvers
+Author URI: 
+Description: This is my default theme for fast and rapid wordpress development.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.0
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: humberto
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+// abstracts
+@import 'abstracts/config';     // variables and mixins
+
+// base
+@import 'base/reset';           // normalize
+@import 'base/fonts';
+@import 'base/typography';      // typography
+
+// layout
+@import 'layout/layouts';       // layouts
+
+// module
+@import 'module/links';         // links
+@import 'module/button';        // buttons
+@import 'module/lists';         // lists
+@import 'module/forms';         // forms
+@import 'module/hamburger';     // hamburger main menu
+@import 'module/navigation';    // main navigation
+@import 'module/hero';          // hero images
+@import 'module/cards';         // cards component
+@import 'module/screenreader';  // screenreader link with wordpress compatible
+@import 'module/osano-cookie';  // cookie consent
+@import 'module/helpers';       // small helpers
+
+// shame and vendors
+@import 'shame/vendor';         // everything, thats not programmed by own

@@ -1,0 +1,55 @@
+// --------------
+// hamburger icon
+// --------------
+
+label.hamburger {
+  display: block;
+  background: color(h-bg);
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 16px;
+  border-radius: 4px;
+  transition: border-radius 0.5s;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+input#hamburger {
+  display: none;
+}
+
+.line {
+  position: absolute;
+  left: 5px;
+  height: 3px;
+  width: 30px;
+  background: color(o-color);
+  border-radius: 5px;
+  display: block;
+  transition: .5s;
+  transform-origin: center;
+}
+
+.line:nth-child(1) {top: 9px;}
+.line:nth-child(2) {top: 18px;}
+.line:nth-child(3) {top: 27px;}
+
+#hamburger:checked + .hamburger .line {
+  background: white;
+}
+#hamburger:checked + label.hamburger {
+  background: color(c-color);
+}
+#hamburger:checked + .hamburger .line:nth-child(1) {
+  transform: translateY(9px) rotate(-45deg);
+}
+#hamburger:checked + .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+#hamburger:checked + .hamburger .line:nth-child(3) {
+  transform: translateY(-9px) rotate(45deg);
+}

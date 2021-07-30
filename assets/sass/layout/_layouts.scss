@@ -1,0 +1,84 @@
+// layout
+
+// site wrapper
+.wrapper {
+  @include center;
+}
+
+// small auto flex
+.flex-auto {
+  display: flex;
+  flex-wrap: wrap;
+  
+  div {
+    flex: 1 1 280px;
+    margin: 1rem;
+    background: silver;
+  }
+  
+}
+
+body .wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+header, footer {flex:1;}
+.site-content {flex: 2;}
+
+// header
+header {
+  background: color(light);
+  color: color(dark);
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+// content main, aside
+.with-sidebar .content {
+  display: block;
+  @include respond-to('medium') {
+    display: flex;
+	
+	main {
+	  width: 68%;
+	}
+	aside {
+	  width: 28%;
+	}
+  }
+}
+
+main, aside {
+	padding: 1rem;
+}
+
+aside {
+	background: color(colored);
+	color: color(colored-contrast);
+}
+
+// footer
+footer {
+  background: color(dark);
+  color: color(light);
+  padding: 2rem 1rem 1rem 1rem;
+  
+  .footer-widgets {
+    @include respond-to('medium') {
+	  display: flex;
+	  justify-content: space-between;
+	  
+	  .footer-widget {
+	    width: 32%;
+	  }
+	}
+	
+	.footer-widget {
+	  padding: 1rem;
+	  background: rgba(255, 255, 255, 0.5);
+	}
+  }
+	
+}

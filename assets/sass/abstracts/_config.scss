@@ -1,0 +1,136 @@
+// ----------------------------------------------------------------------------------
+// This file contains all scss maps, mixins and variables to configure the stylesheet
+// ----------------------------------------------------------------------------------
+
+@charset 'utf-8';
+
+/**
+* font-sizes
+* use it: font-size: sizes(base-size);
+*/
+
+$sizes: (
+	base-size: 16px,
+	h1: 3rem,
+	h2: 2.5rem,
+	h3: 2rem,
+	h4: 1.75rem,
+	h5: 1.5rem,
+	h6: 1.3rem,
+	p: 1rem
+);
+
+// _functions.scss
+@function sizes($key) {
+	@if map-has-key($sizes, $key) {
+		@return map-get($sizes, $key);
+	}
+	@warn "Unknown `#{$key}` in $sizes.";
+	@return null;
+}
+
+/**
+* sass map for colors
+* use it: background: color(light);
+*/
+
+$colors: (
+	// base colors
+	dark: #444444,
+	light: #eeeeee,
+	colored: #f39c12,
+	colored-contrast: #ecf0f1,
+	body-background: #ffffff,
+	font: #444444,
+	
+	// navigation-bar
+	h-bg: #ffffff,	    		// hamburger background
+	o-color: #37474f,			// open color
+	c-color: #37474f,			// close color
+	
+	nav-bg: #ffffff,			// navigation-bar background
+	nav-link: #444444,			// navigation link color
+	nav-hover: #000000,			// navigation link hover color
+	
+	nav-mobile-bg: #37474f,		// mobile navigation background color
+	nav-mobile-link: #ffffff,	// mobile navigation link color
+	nav-mobile-hover: #eeeeee,	// mobile navigation hover color
+	
+	// link colors
+	link-color: #2980b9,			// link color
+	link-hover: #16a085,			// hover color
+);
+
+// _functions.scss
+@function color($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
+// mixin center
+@mixin center {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+/**
+* sass map for breakpoints
+* use it: @include respond-to('medium') {}
+*/
+
+$breakpoints: (
+	'small':	(max-width: 320px),
+	'medium':	(min-width: 768px),
+	'large':	(min-width: 992px),
+	'xlarge':	(min-width: 1200px),
+);
+
+@mixin respond-to($breakpoint) {
+	$raw-query: map-get($breakpoints, $breakpoint);
+	
+	@if $raw-query {
+		$query: if(
+			type-of($raw-query) == 'string',
+			unquote($raw-query),
+			inspect($raw-query)
+		);
+		
+		@media #{$query} {
+			@content;
+		}
+	
+	} @else {
+		@error 'No value found for `#{$breakpoint}`. '
+			+ 'Please make sure it is defined in `$breakpoints` map.';
+	}
+}
+
+/**
+* sass
+* elements: button, form, list, card, hero-image
+* use: @include button;}
+*/
+
+@mixin button {
+	font-size: 18px;
+	font-weight: bold;
+	color: color(light);
+	background: color(dark);
+	text-decoration: none;
+	padding: 0.3rem 0.7rem;
+	border: 1px solid color(dark);
+	
+	&:hover {
+		text-decoration: none;
+		background: color(light);
+		color: color(dark);
+	}
+}
+
+/**
+ * sass
+ * helpers, screenreader, osano-cookie, helpers
+ */
