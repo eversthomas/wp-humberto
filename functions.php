@@ -122,6 +122,11 @@ require_once ( get_stylesheet_directory() . '/functions/theme-options-seo.php' )
 require_once ( get_stylesheet_directory() . '/functions/emojis.php' );
 
 /**
+ * enqueue block patterns
+ */
+require_once ( get_stylesheet_directory() . '/block-patterns/card.php' );
+
+/**
  * Deactivate xmlrp
  */
 add_filter( 'xmlrpc_enabled', '__return_false' );
