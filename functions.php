@@ -46,7 +46,7 @@ function humberto_setup() {
         'flex-height'          => true,
         'flex-width'           => true,
         'header-text'          => array( 'site-title', 'site-description' ),
-        'unlink-homepage-logo' => true, 
+        'unlink-homepage-logo' => false, 
     );
     add_theme_support( 'custom-logo', $defaults );
     
